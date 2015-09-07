@@ -1,0 +1,7 @@
+{% extends "base_template.html" %}
+{% block content %}
+    <h1>Archives</h1>
+    {% for subject in subjects %}
+        <a href="{% url 'subject' subject.id %}">{{ subject.name }}</a>
+    {% endfor %}
+{% endblock %}

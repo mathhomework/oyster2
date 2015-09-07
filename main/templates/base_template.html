@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <link href="{% static 'css/all.css' %}" rel="stylesheet" type="text/css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="top-bar">
+        <a href="{% url 'home' %}" class="oyster">Oyster</a>
+        <ul>
+        {% if user.is_authenticated %}
+            <li><a class="item" href="{% url 'review_form' %}">Write</a></li>
+            <li><a class="item" href="{% url 'profile' user.id %}">{{ user.username }}</a></li>
+            <li><a class="item" href="{% url 'logout' %}">Log out</a></li>
+        {% else %}
+            <li><a class="item" href="{% url 'login' %}">Log In</a></li>
+            <li><a class="item" href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+            <li><a class="item" href="{% url 'archives' %}">Archives</a></li>
+
+        </ul>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>

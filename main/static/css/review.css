@@ -1,0 +1,130 @@
+body {
+    font-family: "Times New Roman", sans-serif;
+}
+input, textarea, select{
+    font-family: inherit;
+    border: none;
+    text-wrap: normal;
+
+}
+
+input:focus, textarea:focus{
+    outline:none;
+}
+h1,h2,h3,h4,h5,h6,p {
+ line-height: 1.45;
+}
+h1 { font-size: 4em; }
+h2 { font-size: 3em; }
+
+.label-wrapper, textarea{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+form{
+    height:100%;
+}
+
+textarea{
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+/*for typed.js*/
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 1.0s infinite;
+    -moz-animation: blink 1.0s infinite;
+    animation: blink 1.0s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+/*end for typed.js*/
+
+.label-wrapper{
+    /*color:red;*/
+    width: 100%;
+    /*position: absolute;*/
+    display:block;
+    font-size: 60px;
+    font-size: 6vw;
+}
+
+.answer-wrapper input, .answer-wrapper textarea{
+    width:100%;
+    display:block;
+    font-size:3vw;
+}
+.invisible{
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+.submit{
+    position:fixed;
+    right: 3%;
+    bottom: 3%;
+    z-index: 10;
+    padding: 15px;
+    font-size: 30px;
+    background: white;
+    border: black 4px solid;
+    transition: background 500ms ease, color 500ms ease;
+    -webkit-transition: background 500ms ease-out 500ms, color 500ms ease-out 500ms;
+    -moz-transition: background 500ms ease-out 500s, color 500ms ease-out 500s;
+    -o-transition: background 500ms ease-out 500s, color 500ms ease-out 500s;
+    cursor: pointer;
+    cursor: hand;
+
+
+}
+
+.submit:hover{
+    background: black;
+    color: white;
+}
+/*.label-wrapper label{*/
+    /*font-size: 60px;*/
+/*}*/
+.answer-wrapper{
+    text-align:center;
+    margin-top: 25vh;
+}
+.answer-wrapper ul{
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    top:50%;
+    left: 50%;
+    -webkit-padding-start:0px;
+    display:inline-block;
+    text-align: center;
+}
+.answer-wrapper li{
+    display: inline-block;
+}
+.answer-wrapper ul input[type="radio"]{
+    height: 40px;
+    width: 40px;
+
+}
+
+@media (max-width:567px){
+    .label-wrapper{
+        font-size:36px;
+    }
+}

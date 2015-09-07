@@ -1,0 +1,70 @@
+.presenting{
+    margin-top: 3vh;
+    font-size: 2vmax;
+    display:block;
+    text-align:center;
+}
+.current{
+    text-align:center;
+    font-size: 10vmax;
+}
+
+.reviews{
+    width: 100%;
+    padding: 1vw;
+    -webkit-column-count: 4; /* Chrome, Safari, Opera */
+    -moz-column-count: 4; /* Firefox */
+    column-count: 4;
+}
+
+.review{
+    display:inline-block;
+    padding-bottom: 20px;
+}
+
+.question{
+    color:brown;
+    font-size: 1.3em;
+}
+.answer{
+    font-size: 1.8em;
+}
+@media (min-width:1201px){
+    .reviews{
+        width: 100%;
+        padding: 1vw;
+        -webkit-column-count: 4; /* Chrome, Safari, Opera */
+        -moz-column-count: 4; /* Firefox */
+        column-count: 4;
+    }
+}
+@media (min-width:798px) and (max-width:1200px){
+    .reviews{
+        width: 100%;
+        padding: 1vw;
+        -webkit-column-count: 3; /* Chrome, Safari, Opera */
+        -moz-column-count: 3; /* Firefox */
+        column-count: 3;
+
+    }
+}
+
+@media (min-width:568px) and (max-width:797px){
+    .reviews{
+        width: 100%;
+        padding: 1vw;
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
+        -moz-column-count: 2; /* Firefox */
+        column-count: 2;
+    }
+}
+
+@media (max-width:567px){
+    .reviews{
+        width: 100%;
+        padding: 1vw;
+        -webkit-column-count: 1; /* Chrome, Safari, Opera */
+        -moz-column-count: 1; /* Firefox */
+        column-count: 1;
+    }
+}

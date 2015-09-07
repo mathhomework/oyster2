@@ -1,0 +1,22 @@
+{% extends "base_template.html" %}
+{% load staticfiles %}
+
+
+{% block head %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+    <span class="presenting">Presenting this week's subject,</span>
+    <h1 class="current">{{ subject }}</h1>
+    <div class="reviews">
+    {% for review in reviews %}
+        <div class="review">
+        {{ review.review.rating }} by <a href="{% url 'profile' review.review.author.id %}">{{ review.review.author }}</a>
+        {%  for x in review.qa %}
+            <div class="question">{{ x.question.question }}</div>
+            <div class="answer">{{ x.answer.answer }}</div>
+        {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

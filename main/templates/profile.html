@@ -1,0 +1,16 @@
+{% extends "base_template.html" %}
+{% block content %}
+    {{ author.username }}
+    <div class="reviews">
+    {% for review in reviews %}
+        <div class="review">
+        <h1>{{ review.review.subject }}</h1>
+        {{ review.review.rating }} by {{ review.review.author }}
+        {%  for x in review.qa %}
+            <div class="question">{{ x.question.question }}</div>
+            <div class="answer">{{ x.answer.answer }}</div>
+        {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+*.pyc
+
+settings.py
+
+*.json
+
+*~
+local_settings.py
+
+.idea/
+
+models.py
+
+api
+
+*.sublime-workspace

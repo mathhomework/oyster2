@@ -1,0 +1,42 @@
+{% extends "base_template.html" %}
+{% load staticfiles %}
+{% block head %}
+    <script type="text/javascript" src="{% static 'js/typed.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/textFit.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/flowtype.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.fittext.js' %}"></script>
+
+    <script src="{% static 'js/my.js' %}"></script>
+    <link href="{% static 'css/review.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+{#<p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>#}
+<div id="content">
+<form action="/review_form/" method="post">{% csrf_token %}
+
+{{ wizard.management_form }}
+{% if wizard.form.forms %}
+    {{ wizard.form.management_form }}
+    {% for form in wizard.form.forms %}
+        {{ form }}
+    {% endfor %}
+{% else %}
+{#    {{ wizard.form }}#}
+    {% for form in wizard.form %}
+        <div class="label-wrapper">
+            <label data-label="{{ form.label }}"></label>
+        </div>
+        <div class="answer-wrapper">
+            {{ form }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+{#{% if wizard.steps.prev %}#}
+{#<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">first step</button>#}
+{#<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">prev step</button>#}
+{#{% endif %}#}
+<input class="submit" type="submit" value="submit"/>
+</form>
+</div>
+{% endblock %}
